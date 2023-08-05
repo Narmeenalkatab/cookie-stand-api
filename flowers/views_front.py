@@ -5,18 +5,18 @@ from .models import flowers
 
 
 class flowersListView(LoginRequiredMixin, ListView):
-    template_name = "flowers/flowers_list.html"
+    template_name = "flowers/flower_list.html"
     model = flowers
     context_object_name = "flower"
 
 
 class flowersDetailView(LoginRequiredMixin, DetailView):
-    template_name = "flowers/flowers_detail.html"
+    template_name = "flowers/flower_detail.html"
     model = flowers
 
 
 class flowersUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = "flowers/flowers_update.html"
+    template_name = "flowers/flower_update.html"
     model = flowers
     fields = "__all__"
 
