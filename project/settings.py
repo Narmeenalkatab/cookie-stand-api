@@ -1,3 +1,7 @@
+from datetime import timedelta
+from pathlib import Path
+import environ
+
 """
 Django settings for project project.
 
@@ -10,9 +14,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from datetime import timedelta
-from pathlib import Path
-import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +31,7 @@ env = environ.Env(
     DATABASE_PASSWORD=(str, ""),
     DATABASE_HOST=(str, ""),
     DATABASE_PORT=(int, 5432),
+    SECRET_KEY=(str,""),
 )
 
 environ.Env.read_env()
@@ -61,8 +64,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # local
     "accounts",
-    "flowers",
-
+    "cookie_stands",
 ]
 
 MIDDLEWARE = [
